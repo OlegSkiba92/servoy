@@ -1,0 +1,8 @@
+{
+  "name": "servoy",
+  "description": "Some dynamic (moving) AngularJS webcomponents",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1"
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="servoy">
+<head>
+  <meta charset="utf-8">
+  <title>servoy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- build:css css/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css css/main.css -->
+  <link rel="stylesheet" href="style.css"/>
+  <!-- endbuild -->
+</head>
+<body ng-cloak>
+
+<div ui-view></div>
+
+
+<!-- build:js js/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js js/components.js -->
+<script src="components/servoyChart/servoyChart.js"></script>
+<!-- endbuild -->
+
+<!-- build:js js/app.js -->
+<script src="app.js"></script>
+<script src="config/routing.js"></script>
+
+<script src="templates/home/home.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

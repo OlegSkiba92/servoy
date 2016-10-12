@@ -1,0 +1,27 @@
+<div class="servoy-chart">
+  <div class="visible-chart">
+    <div class="chart">
+      <div class="slice" ng-style="calculate(number)">
+        <span></span>
+        <div class="chart-center">
+        </div>
+      </div>
+    </div>
+
+    <div class="chart2">
+      <div class="slice" ng-style="calculate(number)">
+        <span></span>
+        <div class="chart-center">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="range min">-100</div>
+  <div class="range max">+100</div>
+
+  <div class="number">
+    <span>{{title}}</span>
+    {{number>0?'+':''}}{{number}}
+  </div>
+  <div></div>
+</div>
