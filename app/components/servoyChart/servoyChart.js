@@ -1,4 +1,11 @@
 angular.module('components.servoy-chart', [])
+    .run(function(){
+      var style ='.servoy-chart{position:relative;background:inherit;overflow:hidden;color:#1C3857;font-family:Arial}.servoy-chart .visible-chart{background:0 0;overflow:hidden;position:relative}.servoy-chart .chart,.servoy-chart .chart2{background:#fff;border-radius:50%;position:absolute;overflow:hidden}.servoy-chart .chart .slice,.servoy-chart .chart2 .slice{-webkit-transform:rotate(0);transform:rotate(0);width:100%;height:100%;transition:transform .5s ease}.servoy-chart .chart .slice>span,.servoy-chart .chart2 .slice>span{position:absolute;top:50%;left:0;width:100%;height:50%;background:#40B1D9}.servoy-chart .chart .chart-center,.servoy-chart .chart2 .chart-center{background:#E8F0F3;position:absolute;border-radius:50%}.servoy-chart .number{position:absolute;border-radius:50%;text-align:center;font-weight:700;background:inherit}.servoy-chart .number span.title{position:absolute;font-size:18%;line-height:1;width:100%;left:0;margin-top:25%}.servoy-chart .number span.sign{font-size:40%;vertical-align:bottom}.servoy-chart .chart .chart-center:after{left:-31px;top:50%;margin-top:-11px;position:absolute;border:11px solid transparent;border-right:20px solid #1C3857;content:" "}.servoy-chart .chart2{background:0 0}.servoy-chart .chart2 .slice>span{background:#98CB80}.servoy-chart .chart2 .chart-center{background:#E8F0F3}.servoy-chart .range{padding-top:5px}.servoy-chart .range.min{float:left}.servoy-chart .range.max{float:right}';
+      var css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = style;
+      document.body.appendChild(css);
+    })
     .directive('servoyChart', [function () {
       return {
         restrict: 'E',
