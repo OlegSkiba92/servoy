@@ -1,3 +1,15 @@
-<div style="width: 400px;">
-  <servoy-chart number="number" title="'Division NPS'"></servoy-chart>
+<div style="width: 400px">
+  <servoy-chart first-line="first" second-line="second" title="title"></servoy-chart>
+</div>
+<div>
+  <label>First line [-100 : 100]</label>
+  <input ng-change="changeInput(test)" ng-model="first" ng-init="test = 75">
+</div>
+<div>
+  <label>Second line [0 : 100]</label>
+  <input ng-change="changeInput(test)" ng-model="second" ng-init="test = 75">
+</div>
+<div>
+  <label>Title</label>
+  <input ng-change="changeInput(test)" ng-model="title" ng-init="test = 75">
 </div>

@@ -1,16 +1,17 @@
 $chart-color: #1C3857;
 $big-chart-color: #40B1D9;
-$big-chart-background: #D2D7DE;
-$big-chart-center-color: #fff;
+$big-chart-background: white;
+$big-chart-center-color: #E8F0F3;
 $small-chart-color: #98CB80;
-$small-chart-background: #D2D7DE;
-$small-chart-center-color: #fff;
+$small-chart-background: transparent;
+$small-chart-center-color: #E8F0F3;
 
 .servoy-chart {
   position: relative;
   background: inherit;
   overflow: hidden;
   color: $chart-color;
+  font-family: Arial;
 
   .visible-chart {
     background: transparent;
@@ -55,7 +56,7 @@ $small-chart-center-color: #fff;
     text-align: center;
     font-weight: bold;
     background: inherit;
-    span{
+    span.title{
       position: absolute;
       font-size: 18%;
       line-height: 1;
@@ -63,15 +64,19 @@ $small-chart-center-color: #fff;
       left: 0;
       margin-top: 25%;
     }
+    span.sign{
+      font-size: 40%;
+      vertical-align: bottom;
+    }
   }
 
   .chart .chart-center:after {
-    left: -22px;
+    left: -31px;
     top: 50%;
-    margin-top: -7px;
+    margin-top: -11px;
     position: absolute;
-    border: 7px solid transparent;
-    border-right: 15px solid $chart-color;
+    border: 11px solid transparent;
+    border-right: 20px solid $chart-color;
     content: ' ';
   }
 

@@ -1,7 +1,7 @@
 <div class="servoy-chart">
   <div class="visible-chart">
     <div class="chart">
-      <div class="slice" ng-style="calculate(number)">
+      <div class="slice" ng-style="calculateFirst(firstLine*1)">
         <span></span>
         <div class="chart-center">
         </div>
@@ -9,7 +9,7 @@
     </div>
 
     <div class="chart2">
-      <div class="slice" ng-style="calculate(number)">
+      <div class="slice" ng-style="calculateSecond(secondLine*1)">
         <span></span>
         <div class="chart-center">
         </div>
@@ -20,8 +20,8 @@
   <div class="range max">+100</div>
 
   <div class="number">
-    <span>{{title}}</span>
-    {{number>0?'+':''}}{{number}}
+    <span class="title">{{title}}</span>
+    <span class="sign">{{firstLine!=0 ? (firstLine>0?'+':'-') : ''}}</span>{{Math.abs(firstLine)}}
   </div>
   <div></div>
 </div>

@@ -2,14 +2,15 @@
   position: relative;
   background: inherit;
   overflow: hidden;
-  color: #1C3857; }
+  color: #1C3857;
+  font-family: Arial; }
   .servoy-chart .visible-chart {
     background: transparent;
     overflow: hidden;
     position: relative; }
   .servoy-chart .chart,
   .servoy-chart .chart2 {
-    background: #D2D7DE;
+    background: white;
     border-radius: 50%;
     position: absolute;
     overflow: hidden; }
@@ -30,7 +31,7 @@
       background: #40B1D9; }
     .servoy-chart .chart .chart-center,
     .servoy-chart .chart2 .chart-center {
-      background: #fff;
+      background: #E8F0F3;
       position: absolute;
       border-radius: 50%; }
   .servoy-chart .number {
@@ -39,27 +40,30 @@
     text-align: center;
     font-weight: bold;
     background: inherit; }
-    .servoy-chart .number span {
+    .servoy-chart .number span.title {
       position: absolute;
       font-size: 18%;
       line-height: 1;
       width: 100%;
       left: 0;
       margin-top: 25%; }
+    .servoy-chart .number span.sign {
+      font-size: 40%;
+      vertical-align: bottom; }
   .servoy-chart .chart .chart-center:after {
-    left: -22px;
+    left: -31px;
     top: 50%;
-    margin-top: -7px;
+    margin-top: -11px;
     position: absolute;
-    border: 7px solid transparent;
-    border-right: 15px solid #1C3857;
+    border: 11px solid transparent;
+    border-right: 20px solid #1C3857;
     content: ' '; }
   .servoy-chart .chart2 {
-    background: #D2D7DE; }
+    background: transparent; }
     .servoy-chart .chart2 .slice > span {
       background: #98CB80; }
     .servoy-chart .chart2 .chart-center {
-      background: #fff; }
+      background: #E8F0F3; }
   .servoy-chart .range {
     padding-top: 5px; }
     .servoy-chart .range.min {

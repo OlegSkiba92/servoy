@@ -1,6 +1,8 @@
 angular.module('servoy')
     .controller('homeCtrl', ['$scope',
       function ($scope) {
-        $scope.number = 75;
+        $scope.first = 75;
+        $scope.second = 45;
+        $scope.title = 'Division NPS';
       }
     ]);

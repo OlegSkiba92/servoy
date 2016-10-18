@@ -5,13 +5,14 @@ angular.module('components.servoy-chart', [])
         templateUrl: 'components/servoyChart/servoyChart.html',
         replace: true,
         scope: {
-          number: "=",
+          firstLine: "=",
+          secondLine: "=",
           title: "="
         },
         controller: 'servoyChartCtrl',
         link: function (scope, element, attr) {
-          var sizeChart = 30;
-          var sizeChart2 = 10;
+          var sizeChart = 35;
+          var sizeChart2 = 15;
 
           var visibleChart = angular.element(element[0].querySelector('.visible-chart'));
           var number = angular.element(element[0].querySelector('.number'));
@@ -88,7 +89,8 @@ angular.module('components.servoy-chart', [])
     }])
     .controller('servoyChartCtrl', ['$scope',
       function ($scope) {
-        $scope.calculate = function (data) {
+      $scope.Math = window.Math;
+        $scope.calculateFirst = function (data) {
           data = (data < -100) ? -100 : ((data > 100) ? 100 : data);
           return {
             '-webkit-transform': 'rotate(' + (data + 100) / 200 * 180 + 'deg)',
@@ -96,5 +98,12 @@ angular.module('components.servoy-chart', [])
           }
         };
 
+        $scope.calculateSecond = function (data) {
+          data = (data < 0) ? 0 : ((data > 100) ? 100 : data);
+          return {
+            '-webkit-transform': 'rotate(' + data / 100 * 180 + 'deg)',
+            'transform': 'rotate(' + data / 100 * 180 + 'deg)'
+          }
+        };
       }
     ]);
