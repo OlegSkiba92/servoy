@@ -1,9 +1,16 @@
 .servoy-chart {
   position: relative;
   background: inherit;
-  overflow: hidden;
   color: #1C3857;
-  font-family: Arial; }
+  font-family: Arial;
+  overflow: hidden; }
+  .servoy-chart span.circle {
+    height: 6px;
+    width: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin: 0 auto 5px;
+    border-radius: 50%;
+    display: block; }
   .servoy-chart .visible-chart {
     background: transparent;
     overflow: hidden;
@@ -42,21 +49,26 @@
     background: inherit; }
     .servoy-chart .number span.title {
       position: absolute;
-      font-size: 18%;
+      font-size: 13%;
       line-height: 1;
       width: 100%;
       left: 0;
       margin-top: 25%; }
     .servoy-chart .number span.sign {
       font-size: 40%;
-      vertical-align: bottom; }
+      vertical-align: bottom;
+      position: absolute;
+      left: 20%;
+      font-weight: normal;
+      line-height: 1;
+      top: 40%; }
   .servoy-chart .chart .chart-center:after {
-    left: -31px;
+    left: -28px;
     top: 50%;
-    margin-top: -11px;
+    margin-top: -10px;
     position: absolute;
-    border: 11px solid transparent;
-    border-right: 20px solid #1C3857;
+    border: 10px solid transparent;
+    border-right: 18px solid #1C3857;
     content: ' '; }
   .servoy-chart .chart2 {
     background: transparent; }
@@ -64,9 +76,3 @@
       background: #98CB80; }
     .servoy-chart .chart2 .chart-center {
       background: #E8F0F3; }
-  .servoy-chart .range {
-    padding-top: 5px; }
-    .servoy-chart .range.min {
-      float: left; }
-    .servoy-chart .range.max {
-      float: right; }

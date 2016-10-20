@@ -9,9 +9,18 @@ $small-chart-center-color: #E8F0F3;
 .servoy-chart {
   position: relative;
   background: inherit;
-  overflow: hidden;
   color: $chart-color;
   font-family: Arial;
+  overflow: hidden;
+
+  span.circle{
+    height: 6px;
+    width: 6px;
+    border: 1px solid rgba(0,0,0,.5);
+    margin: 0 auto 5px;
+    border-radius: 50%;
+    display: block;
+  }
 
   .visible-chart {
     background: transparent;
@@ -58,7 +67,7 @@ $small-chart-center-color: #E8F0F3;
     background: inherit;
     span.title{
       position: absolute;
-      font-size: 18%;
+      font-size: 13%;
       line-height: 1;
       width: 100%;
       left: 0;
@@ -67,16 +76,21 @@ $small-chart-center-color: #E8F0F3;
     span.sign{
       font-size: 40%;
       vertical-align: bottom;
+      position: absolute;
+      left: 20%;
+      font-weight: normal;
+      line-height: 1;
+      top: 40%;
     }
   }
 
   .chart .chart-center:after {
-    left: -31px;
+    left: -28px;
     top: 50%;
-    margin-top: -11px;
+    margin-top: -10px;
     position: absolute;
-    border: 11px solid transparent;
-    border-right: 20px solid $chart-color;
+    border: 10px solid transparent;
+    border-right: 18px solid $chart-color;
     content: ' ';
   }
 
@@ -87,18 +101,6 @@ $small-chart-center-color: #E8F0F3;
   }
     .chart-center{
       background: $small-chart-center-color;
-    }
-  }
-
-  .range {
-    padding-top: 5px;
-
-    &.min {
-      float: left;
-    }
-
-    &.max {
-      float: right;
     }
   }
 }

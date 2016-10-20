@@ -1,6 +1,6 @@
 angular.module('components.servoy-chart', [])
     .run(function(){
-      var style ='.servoy-chart{position:relative;background:inherit;overflow:hidden;color:#1C3857;font-family:Arial}.servoy-chart .visible-chart{background:0 0;overflow:hidden;position:relative}.servoy-chart .chart,.servoy-chart .chart2{background:#fff;border-radius:50%;position:absolute;overflow:hidden}.servoy-chart .chart .slice,.servoy-chart .chart2 .slice{-webkit-transform:rotate(0);transform:rotate(0);width:100%;height:100%;transition:transform .5s ease}.servoy-chart .chart .slice>span,.servoy-chart .chart2 .slice>span{position:absolute;top:50%;left:0;width:100%;height:50%;background:#40B1D9}.servoy-chart .chart .chart-center,.servoy-chart .chart2 .chart-center{background:#E8F0F3;position:absolute;border-radius:50%}.servoy-chart .number{position:absolute;border-radius:50%;text-align:center;font-weight:700;background:inherit}.servoy-chart .number span.title{position:absolute;font-size:18%;line-height:1;width:100%;left:0;margin-top:25%}.servoy-chart .number span.sign{font-size:40%;vertical-align:bottom}.servoy-chart .chart .chart-center:after{left:-31px;top:50%;margin-top:-11px;position:absolute;border:11px solid transparent;border-right:20px solid #1C3857;content:" "}.servoy-chart .chart2{background:0 0}.servoy-chart .chart2 .slice>span{background:#98CB80}.servoy-chart .chart2 .chart-center{background:#E8F0F3}.servoy-chart .range{padding-top:5px}.servoy-chart .range.min{float:left}.servoy-chart .range.max{float:right}';
+      var style =".servoy-chart{position:relative;background:inherit;color:#1C3857;font-family:Arial;overflow:hidden}.servoy-chart span.circle{height:6px;width:6px;border:1px solid rgba(0,0,0,.5);margin:0 auto 5px;border-radius:50%;display:block}.servoy-chart .visible-chart{background:0 0;overflow:hidden;position:relative}.servoy-chart .chart,.servoy-chart .chart2{background:#fff;border-radius:50%;position:absolute;overflow:hidden}.servoy-chart .chart .slice,.servoy-chart .chart2 .slice{-webkit-transform:rotate(0);transform:rotate(0);width:100%;height:100%;transition:transform .5s ease}.servoy-chart .chart .slice>span,.servoy-chart .chart2 .slice>span{position:absolute;top:50%;left:0;width:100%;height:50%;background:#40B1D9}.servoy-chart .chart .chart-center,.servoy-chart .chart2 .chart-center{background:#E8F0F3;position:absolute;border-radius:50%}.servoy-chart .number{position:absolute;border-radius:50%;text-align:center;font-weight:700;background:inherit}.servoy-chart .number span.title{position:absolute;font-size:13%;line-height:1;width:100%;left:0;margin-top:25%}.servoy-chart .number span.sign{font-size:40%;vertical-align:bottom;position:absolute;left:20%;font-weight:400;line-height:1;top:40%}.servoy-chart .chart .chart-center:after{left:-28px;top:50%;margin-top:-10px;position:absolute;border:10px solid transparent;border-right:18px solid #1C3857;content:' '}.servoy-chart .chart2{background:0 0}.servoy-chart .chart2 .slice>span{background:#98CB80}.servoy-chart .chart2 .chart-center{background:#E8F0F3}";
       var css = document.createElement("style");
       css.type = "text/css";
       css.innerHTML = style;
@@ -18,8 +18,8 @@ angular.module('components.servoy-chart', [])
         },
         controller: 'servoyChartCtrl',
         link: function (scope, element, attr) {
-          var sizeChart = 35;
-          var sizeChart2 = 15;
+          var sizeChart = 33;
+          var sizeChart2 = 14;
 
           var visibleChart = angular.element(element[0].querySelector('.visible-chart'));
           var number = angular.element(element[0].querySelector('.number'));
@@ -35,7 +35,7 @@ angular.module('components.servoy-chart', [])
           };
 
           var width = element[0].clientWidth;
-          var widthChart2 = (width - sizeChart * 2)-20;
+          var widthChart2 = (width - sizeChart * 2)-26;
 
           element.css({
             'padding-bottom': width / 7 + 'px'
@@ -46,12 +46,12 @@ angular.module('components.servoy-chart', [])
           });
 
           number.css({
-            top: sizeChart + 'px',
+            top: sizeChart + 11 + 'px',
             left: sizeChart + 'px',
             width: (width - sizeChart * 2) + 'px',
             height: (width - sizeChart * 2) + 'px',
             'line-height': (width - sizeChart * 2) + 'px',
-            'font-size': (width - sizeChart * 2) / 3 + 'px'
+            'font-size': (width - sizeChart * 2) / 3 + 8 + 'px'
           });
 
 
@@ -76,8 +76,8 @@ angular.module('components.servoy-chart', [])
           chart2.chart.css({
             width: widthChart2 + 'px',
             height: widthChart2 + 'px',
-            top: sizeChart+10 + 'px',
-            left: sizeChart+10 + 'px'
+            top: sizeChart+13 + 'px',
+            left: sizeChart+13 + 'px'
           });
 
           chart2.slice.css({
@@ -106,10 +106,10 @@ angular.module('components.servoy-chart', [])
         };
 
         $scope.calculateSecond = function (data) {
-          data = (data < 0) ? 0 : ((data > 100) ? 100 : data);
+          data = (data < -100) ? -100 : ((data > 100) ? 100 : data);
           return {
-            '-webkit-transform': 'rotate(' + data / 100 * 180 + 'deg)',
-            'transform': 'rotate(' + data / 100 * 180 + 'deg)'
+            '-webkit-transform': 'rotate(' + (data + 100) / 200 * 180 + 'deg)',
+            'transform': 'rotate(' + (data + 100) / 200 * 180 + 'deg)'
           }
         };
       }

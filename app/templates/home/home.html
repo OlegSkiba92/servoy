@@ -1,15 +1,15 @@
-<div style="width: 400px">
+<div style="width: 310px; margin-left: 26px">
   <servoy-chart first-line="first" second-line="second" title="title"></servoy-chart>
 </div>
 <div>
   <label>First line [-100 : 100]</label>
-  <input ng-change="changeInput(test)" ng-model="first" ng-init="test = 75">
+  <input ng-model="first">
 </div>
 <div>
-  <label>Second line [0 : 100]</label>
-  <input ng-change="changeInput(test)" ng-model="second" ng-init="test = 75">
+  <label>Second line [-100 : 100]</label>
+  <input ng-model="second">
 </div>
 <div>
   <label>Title</label>
-  <input ng-change="changeInput(test)" ng-model="title" ng-init="test = 75">
+  <input ng-model="title">
 </div>

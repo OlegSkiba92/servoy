@@ -83,3 +83,10 @@ gulp.task('build', ['bower', 'sass', 'html', 'images', 'fonts'], function () {
       .pipe(gulpif('*.css', minifyCss()))
       .pipe(gulp.dest('../site/'));
 });
+
+gulp.task('minifisass', function () {
+  return gulp.src('app/index.html')
+      .pipe(useref())
+      .pipe(gulpif('*.css', minifyCss()))
+      .pipe(gulp.dest('dist/'));
+});
